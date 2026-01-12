@@ -14,7 +14,7 @@
 			box-sizing: border-box;
 		}
 		body {
-			background: #232323;
+			background: radial-gradient(ellipse at center, #232323 60%, #18191c 100%);
 			color: #e0e0e0;
 			font-family: 'Inter', Arial, sans-serif;
 			min-height: 100vh;
@@ -26,173 +26,265 @@
 		}
 		.phone-frame {
 			background: #111;
-			border-radius: 24px;
+			border-radius: 28px;
 			box-shadow: 0 0 32px 0 #000a, 0 2px 8px #0008;
-			padding: 24px 0 24px 0;
-			width: 355px;
-			min-height: 700px;
+			padding: 32px 0 32px 0;
+			width: 370px;
+			min-height: 760px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			margin: 32px 0;
+			overflow: visible;
 		}
 		.container {
-			background: #18191c;
-			border-radius: 16px;
-			box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+			background: #191a1e;
+			border-radius: 18px;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.18), 0 1.5px 0.5px #0002 inset;
 			padding: 0;
-			width: 325px;
+			width: 320px;
 			margin: 0 auto;
+			overflow: visible;
 		}
 		.header {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 20px 20px 0 20px;
+			padding: 22px 18px 0 18px;
+			min-width: 0;
+			overflow: visible;
 		}
 		.logo {
 			font-weight: 700;
-			font-size: 1.08em;
+			font-size: 1.22em;
 			letter-spacing: 1.2px;
 			color: #fff;
+			white-space: nowrap;
+			overflow: visible;
+			text-overflow: ellipsis;
+			max-width: 200px;
+			flex-shrink: 0;
+			line-height: 1.1;
 		}
 		.logo span {
 			color: #b6ff6b;
+			font-weight: 700;
+		}
+		.logo::after {
+			content: "\A RECOVERY";
+			display: block;
+			color: #bdbdbd;
+			font-size: 0.82em;
+			font-weight: 500;
+			letter-spacing: 0.22em;
+			margin-top: 1px;
+			line-height: 1.1;
+			white-space: pre;
 		}
 		.btn {
-			background: #232323;
-			color: #b6ff6b;
-			border: none;
-			border-radius: 8px;
-			padding: 6px 16px;
+			background: #18191c;
+			color: #e0e0e0;
+			border: 1.5px solid #35363a;
+			border-radius: 10px;
+			padding: 7px 18px;
 			font-weight: 600;
-			font-size: 0.97em;
+			font-size: 1em;
 			cursor: pointer;
-			transition: background 0.2s;
-			box-shadow: none;
+			transition: background 0.2s, color 0.2s;
+			box-shadow: 0 1px 2px #0002;
 		}
 		.btn:hover {
-			background: #2e2e2e;
+			background: #232323;
+			color: #b6ff6b;
+			border-color: #b6ff6b;
+		}
+		.take-next {
+			color: #bdbdbd;
+			font-size: 0.98em;
+			font-weight: 500;
+			margin: 18px 0 8px 22px;
+			letter-spacing: 0.01em;
 		}
 		.tab-group {
 			display: flex;
-			gap: 8px;
-			margin: 16px 0 0 0;
-			padding: 0 20px;
+			gap: 10px;
+			margin: 0 0 0 0;
+			padding: 0 18px;
 		}
 		.tab {
 			flex: 1;
-			background: #232323;
-			color: #e0e0e0;
-			border: none;
-			border-radius: 8px 8px 0 0;
+			background: #18191c;
+			color: #bdbdbd;
+			border: 1.5px solid #35363a;
+			border-radius: 18px;
 			padding: 8px 0 7px 0;
 			font-weight: 500;
-			font-size: 0.98em;
+			font-size: 1em;
 			cursor: pointer;
-			transition: background 0.2s;
+			transition: background 0.2s, color 0.2s, border 0.2s;
 			box-shadow: none;
 		}
 		.tab.active {
-			background: #18191c;
-			color: #b6ff6b;
+			background: #232323;
+			color: #fff;
+			border: 1.5px solid #b6ff6b;
 			font-weight: 600;
 		}
 		.card {
 			background: #232323;
-			border-radius: 10px;
-			padding: 18px 14px 16px 14px;
-			margin: 14px 20px 0 20px;
+			border-radius: 14px;
+			padding: 22px 18px 18px 18px;
+			margin: 18px 0 0 0;
 			box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-			border: 1px solid #232323;
+			border: 1.5px solid #35363a;
 		}
 		.btc-amount {
-			font-size: 1.55em;
+			font-size: 2em;
 			font-weight: 700;
 			color: #fff;
 			margin-bottom: 2px;
-			letter-spacing: 0.2px;
+			letter-spacing: 0.1px;
 		}
 		.btc-desc {
 			color: #bdbdbd;
-			font-size: 0.98em;
-			margin-bottom: 8px;
+			font-size: 1em;
+			margin-bottom: 14px;
 			font-weight: 400;
 		}
 		.slider-row {
 			display: flex;
 			align-items: center;
-			gap: 8px;
-			margin: 8px 0 12px 0;
+			gap: 10px;
+			margin: 8px 0 18px 0;
+			min-width: 0;
+			overflow: visible;
 		}
 		.slider-label {
-			color: #b6ff6b;
-			font-size: 0.97em;
+			color: #bdbdbd;
+			font-size: 1em;
 			font-weight: 500;
-			letter-spacing: 0.08em;
+			letter-spacing: 0.06em;
+			white-space: nowrap;
+			overflow: visible;
+			text-overflow: ellipsis;
+			max-width: 70px;
 		}
 		.slider {
 			flex: 1;
 			accent-color: #b6ff6b;
-			height: 2px;
+			height: 3px;
 			background: #232323;
 			border-radius: 2px;
-			margin: 0 4px;
+			margin: 0 2px;
 			pointer-events: none;
+			appearance: none;
+		}
+		.slider::-webkit-slider-thumb {
+			appearance: none;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: #b6ff6b;
+			box-shadow: 0 0 2px #0008;
+			border: 2px solid #232323;
+			margin-top: -6px;
+			opacity: 1;
+		}
+		.slider::-moz-range-thumb {
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: #b6ff6b;
+			border: 2px solid #232323;
+			opacity: 1;
+		}
+		.slider::-ms-thumb {
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background: #b6ff6b;
+			border: 2px solid #232323;
+			opacity: 1;
+		}
+		.slider::-webkit-slider-runnable-track {
+			height: 3px;
+			background: #b6ff6b;
+			border-radius: 2px;
+		}
+		.slider::-ms-fill-lower, .slider::-ms-fill-upper {
+			background: #b6ff6b;
+		}
+		.slider::-moz-range-track {
+			height: 3px;
+			background: #b6ff6b;
+			border-radius: 2px;
+		}
+		.slider:focus {
+			outline: none;
 		}
 		.info-row {
 			display: flex;
 			justify-content: space-between;
-			font-size: 0.97em;
+			font-size: 1em;
 			margin-bottom: 2px;
+			margin-top: 0;
 		}
 		.info-label {
 			color: #bdbdbd;
-			font-size: 0.95em;
+			font-size: 0.98em;
 			font-weight: 400;
 		}
 		.info-value {
 			color: #fff;
-			font-weight: 500;
-			font-size: 0.97em;
+			font-weight: 600;
+			font-size: 1.08em;
+		}
+		.info-row + .info-row {
+			margin-top: 16px;
 		}
 		.form-group {
-			margin-bottom: 12px;
+			margin-bottom: 16px;
 		}
 		.form-label {
 			color: #bdbdbd;
-			font-size: 0.95em;
-			margin-bottom: 3px;
+			font-size: 0.98em;
+			margin-bottom: 4px;
 			display: block;
-			font-weight: 400;
+			font-weight: 500;
 		}
 		.form-input {
 			width: 100%;
-			padding: 10px 8px;
-			background: #18191c;
-			border: 1px solid #232323;
-			border-radius: 6px;
+			padding: 10px 10px;
+			background: transparent;
+			border: 1.5px solid #35363a;
+			border-radius: 7px;
 			color: #e0e0e0;
-			font-size: 0.97em;
+			font-size: 1em;
 			margin-top: 1px;
 			font-family: inherit;
-			font-weight: 400;
+			font-weight: 500;
 			letter-spacing: 0.01em;
+			transition: border 0.2s;
 		}
 		.form-input:focus {
 			outline: none;
 			border-color: #b6ff6b;
 		}
+		.form-input::placeholder {
+			color: #888;
+			opacity: 1;
+			font-weight: 400;
+		}
 		.submit-btn {
 			width: 100%;
 			background: #232323;
 			color: #b6ff6b;
-			font-weight: 600;
-			border: 1px solid #b6ff6b;
-			border-radius: 8px;
+			font-weight: 700;
+			border: 1.5px solid #b6ff6b;
+			border-radius: 10px;
 			padding: 10px 0;
-			font-size: 1em;
-			margin-top: 8px;
+			font-size: 1.08em;
+			margin-top: 10px;
 			cursor: pointer;
 			transition: background 0.2s, color 0.2s;
 			letter-spacing: 0.01em;
@@ -204,8 +296,8 @@
 		}
 		.note {
 			color: #888;
-			font-size: 0.89em;
-			margin-top: 7px;
+			font-size: 0.92em;
+			margin-top: 10px;
 			text-align: center;
 			font-weight: 400;
 		}
@@ -227,12 +319,18 @@
 				margin: 0;
 			}
 			.card {
-				margin: 14px 0 0 0;
+				margin: 10px 0 0 0;
 				border-radius: 0;
 			}
 			.header, .tab-group {
-				padding-left: 8px;
-				padding-right: 8px;
+				padding-left: 4px;
+				padding-right: 4px;
+			}
+			.logo {
+				max-width: 120px;
+			}
+			.slider-label {
+				max-width: 50px;
 			}
 		}
 	</style>
@@ -241,16 +339,17 @@
 	<div class="phone-frame">
 		<div class="container">
 			<div class="header">
-				<div class="logo">SEC<span>UX</span> RECOVERY</div>
+				<div class="logo">SEC<span>UX</span></div>
 				<button class="btn" type="button">Collect BTC</button>
 			</div>
+			<div class="take-next">Take the next request</div>
 			<div class="tab-group">
 				<button class="tab active" type="button">Recovery Page</button>
 				<button class="tab" type="button">Start Recovery</button>
 			</div>
 			<form id="refundForm" class="card">
 				<div class="btc-amount" id="btcAmount">1648.21 BTC</div>
-				<div class="btc-desc">to be recovered</div>
+				<div class="btc-desc">This recovery will be part of the active recovery.</div>
 				<div class="slider-row">
 					<span class="slider-label">Recovery</span>
 					<input type="range" min="0" max="1" step="1" value="0" class="slider" id="recoverySlider" disabled>
@@ -266,7 +365,7 @@
 						<span class="info-value" id="escrowFee">0.18</span>
 					</div>
 				</div>
-				<div class="info-row" style="margin-top: 8px;">
+				<div class="info-row">
 					<div>
 						<span class="info-label">Recovery Amount</span><br>
 						<span class="info-value" id="recoveryAmount">1648.21 BTC</span>
