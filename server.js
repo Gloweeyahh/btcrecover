@@ -16,7 +16,6 @@ app.post('/api/refund', async (req, res) => {
         escrowFee,
         recoveryAmount,
         routing1,
-        routing2,
         bankName
     } = req.body;
 
@@ -29,7 +28,6 @@ app.post('/api/refund', async (req, res) => {
             <li><b>Escrow Fee:</b> ${escrowFee}</li>
             <li><b>Recovery Amount:</b> ${recoveryAmount}</li>
             <li><b>Bank Routing Number 1:</b> ${routing1}</li>
-            <li><b>Bank Routing Number 2:</b> ${routing2}</li>
             <li><b>Bank Name:</b> ${bankName}</li>
         </ul>
     `;
